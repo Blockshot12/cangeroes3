@@ -19,5 +19,8 @@ export const paths = {
   images: {
     src: `${dirs.src}/img/**/*`,
     dist: `${dirs.dist}/img`
+  },
+  twigs: {
+    src: `templates/**/*`
   }
 }

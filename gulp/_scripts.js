@@ -13,7 +13,7 @@ const $ = gulpLoadPlugins()
  */
 let buildScripts = () => {
   let onError = function(error) {
-    notify.onError({
+    $.notify.onError({
       title: '<%= error.message %>',
       sound: 'Frog',
       icon: path.join(__dirname, 'help/error.png'),
