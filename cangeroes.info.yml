@@ -10,8 +10,12 @@ libraries:
   - cangeroes/global-css
   - cangeroes/global-js
 stylesheets-remove:
+  - core/themes/classy/css/components/messages.css
   - core/themes/stable/css/system/components/align.module.css
   - core/themes/stable/css/views/views.module.css
+  - modules/webform/css/webform.form.css
+  - modules/webform/css/webform.progress.css
+  - modules/webform/css/webform.progress.bar.css
 
 regions:
   sitename: 'Sitename'
@@ -19,6 +23,7 @@ regions:
   search: 'Search'
   help: 'Help'
   title_bar: 'Title Bar'
+  alert: 'Alert'
   content: 'Main Content'
   sidebar_first: 'Sidebar Left'
   sidebar_second: 'Sidebar Richt'
