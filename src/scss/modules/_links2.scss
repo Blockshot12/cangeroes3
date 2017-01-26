@@ -1,0 +1,58 @@
+// TODO: Add colors to settings/colors.
+$color-link-hover-black: $color-black;
+
+// TODO: Change and add variables to settings/globals.
+$global-link-transition-duration: .1s;
+
+// Buttons
+// --------------------------------------------------
+.link {
+	@include transition-duration($global-link-transition-duration);
+
+	&--xl {
+		display: block;
+		width: 100%;
+		margin-top: $global-gutter-xs;
+
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			margin-top: $global-gutter-sm;
+		}
+	}
+	&--center {
+		text-align: center;
+	}
+	&--arrow {
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			margin-top: $global-gutter-sm;
+		}
+	}
+
+	// link elements
+	// --------------------------------------------------
+	&--arrow {
+	  &:after {
+	    display: inline-block;
+	    font: normal normal normal 14px/1 FontAwesome;
+	    color: inherit;
+	    font-size: .8em;
+	    font-weight: 300;
+	    text-rendering: auto;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    transform: translate(0, -1px);
+	    content: "\f061";
+	    margin-left: 4px;
+	    @include transition-duration($global-link-transition-duration);
+	  }
+	}
+
+	// link colors
+	// --------------------------------------------------
+	&--hover-black {
+		&:hover {
+			color: $color-link-hover-black;
+		}
+	}
+}

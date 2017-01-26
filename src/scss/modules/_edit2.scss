@@ -1,0 +1,33 @@
+.editable {
+	.user-logged-in & {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		border: 1px solid rgba($color-edit,.4);
+
+		&.editable--spacing {
+			margin: 0 5px 10px;
+			padding: 6px 5px;
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+		&.player--reserve {
+			&:first-child {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+.edit {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+.edit--right {
+	left: auto;
+	right: 0;
+}

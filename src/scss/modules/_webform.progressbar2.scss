@@ -1,0 +1,113 @@
+.webform-progress-bar {
+	position: relative;
+	height: 40px;
+	margin: 0 0 10px;
+	padding: 0;
+	background-color: $color-form-progress-bg;
+	list-style-type: none;
+	color: $color-form-progress-text;
+	font-size: .86rem;
+	// TODO: use Juice gridsystem.
+	@media only screen and (min-width:$b-small) {
+		font-size: 1rem;
+	}
+	font-weight: $font-form-weight;
+
+	&__page {
+	  display: inline-block;
+	  position: relative;
+		height: 40px;
+	  margin: 0;
+	  padding: 10px 5px 10px 25px;
+	  line-height: 20px;
+		text-align: center;
+		overflow: hidden;
+
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+			padding: 10px 10px 10px 30px;
+		}
+		@media only screen and (min-width:$b-large) {
+			padding: 10px 15px 10px 40px;
+		}
+		> b:before, > b:after {
+			position: absolute;
+			display: block;
+			width: 0;
+			height: 0;
+			top: 0;
+			left: 0;
+			border: solid transparent;
+			border-width: 20px;
+			content: "";
+		}
+		> b:before {
+			border-left-color: $color-form-progress-bg;
+		  z-index: 2;
+		}
+		> b:after {
+		  top: -3px;
+		  border-left-color: $color-form-bg;
+		  border-width: 23px;
+		  z-index: 1;
+		}
+		&--current {
+			background-color: $color-form-progress-bg-current;
+			color: $color-form-progress-text-current;
+
+			> b:before {
+				border-left-color: $color-form-progress-bg-current;
+			  z-index: 2;
+			}
+			+ .webform-progress-bar__page > b:before {
+				border-left-color: $color-form-progress-bg-current;
+			}
+		}
+		&--done {
+			&:before {
+				font: normal normal normal 16px/1 FontAwesome;
+				content: "\f00c";
+			}
+
+			+ .webform-progress-bar__page > b:before {
+		  	border-left-color: $color-form-progress-bg;
+			}
+		}
+		&:first-child {
+			padding-left: 15px;
+		}
+		&:first-child > b:after,
+		&:first-child > b:before {
+		  display: none;
+		}
+
+		&:last-child span {
+			position: absolute;
+		  display: none;//block;
+		  width: 0;
+		  height: 0;
+		  top: 0;
+		  left: 0;
+		  border: solid transparent;
+		  border-left-color: $color-form-bg;
+		  border-width: 20px;
+		}
+
+		&:last-child span {
+		  left: auto;
+		}
+	}
+
+	&[data-steps="2"] .webform-progress-bar__page {
+		width: 50%;
+	}
+	&[data-steps="3"] .webform-progress-bar__page {
+		width: 33.333333334%;
+	}
+	&[data-steps="4"] .webform-progress-bar__page {
+		width: 25%;
+	}
+	&[data-steps="5"] .webform-progress-bar__page {
+		width: 20%;
+	}
+}

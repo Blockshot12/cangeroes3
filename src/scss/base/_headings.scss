@@ -1,0 +1,37 @@
+// TODO: Add heading globals and colors to settings.
+$global-heading-underline-xs: 2.86rem;
+$global-heading-underline-sm: 3.57rem;
+
+$color-heading-text: $color-black;
+$color-heading-hover: $color-orange;
+
+.heading {
+	color: $color-heading-text;
+}
+.heading__underline {
+	//margin: 0 auto rem-calc(10px);
+
+	&:before {
+		background: $orange none repeat scroll 0 0;
+		bottom: rem-calc(10px);
+		content: "";
+		height: 2px;
+		position: absolute;
+		width: $global-heading-underline-xs;
+	}
+	@media (min-width:$screen-sm-min) {
+		margin: 0 auto rem-calc(15px);
+
+		&:before {
+			width: $global-heading-underline-sm;
+			bottom: rem-calc(15px);
+		}
+	}
+}
+.heading__link {
+	color: inherit;
+
+	&:hover {
+		color: $color-heading-hover;
+	}
+}

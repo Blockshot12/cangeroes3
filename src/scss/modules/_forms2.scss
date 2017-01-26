@@ -1,0 +1,291 @@
+// TODO: Add color variables to colors file.
+$color-form-bg: $color-white;
+$color-form-legend: $color-grey;
+$color-form-prefix: lighten($color-grey, 7);
+$color-form-required: $color-orange;
+$color-form-border: $color-black;
+$color-form-label: lighten($color-grey, 12);
+$color-form-input: $color-dark-grey;
+$color-form-input-border: $color-light-grey;
+$color-form-text-hover: $color-black;
+$color-form-element-hover: $color-orange;
+$color-form-text-focus: $color-orange;
+$color-form-element-focus: $color-orange;
+$color-form-text-checked: $color-orange;
+$color-form-element-checked: $color-black;
+$color-form-error: $color-red;
+
+$color-form-progress-text: $color-black;
+$color-form-progress-text-current: $color-orange;
+$color-form-progress-bg: $color-dark-white;
+$color-form-progress-bg-current: $color-black;
+
+$font-form-weight: $font-weight-medium;
+
+$global-form-label-small: 100%;
+$global-form-label-medium: 44%;
+$global-form-label-large: 40%;
+
+$global-form-input-small: 100%;
+$global-form-input-medium: $global-form-label-small - $global-form-label-medium;
+$global-form-input-large: $global-form-label-small - $global-form-label-large;
+
+$global-form-border-radius: 0;
+
+$animation-duration-base: .25s;
+
+.form {
+	padding: 0 0 25px;
+	background-color: $color-form-bg;
+	font-weight: $font-form-weight;
+	@media only screen and (min-width:$b-medium){
+		padding: 0 $global-gutter-sm 25px;
+	}
+	&__legend {
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    color: $color-form-legend;
+	  border-bottom: 2px solid $color-form-border;
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			font-size: 1.45rem;
+		}
+	}
+	&__element, &-wrapper {
+		margin-bottom: 10px;
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-large) {
+			margin-bottom: 15px;
+		}
+	}
+  &__element {
+		position: relative;
+    width: 100%;
+
+		.form__container--inline & {
+			display: inline-block;
+			width: auto;
+			margin-bottom: 0;
+		}
+  }
+  &__control {
+		display: block;
+		padding: 5px;
+		line-height: 24px;
+	}
+	&__label {
+		float: left;
+		width: $global-form-label-small;
+		padding-left: 0;
+		padding-right: 16px;
+		margin: 0;
+		color: $color-form-label;
+		font-size: .95rem;
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+			width: $global-form-label-medium;
+			text-align: right;
+		}
+		@media only screen and (min-width:$b-large){
+			width: $global-form-label-large;
+			font-size: 1.1rem;
+			text-align: right;
+		}
+		.form__checkbox & {
+			width: auto;
+			// TODO: use Juice gridsystem.
+			@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+				margin-left: $global-form-label-medium;
+			}
+			@media only screen and (min-width:$b-large){
+				margin-left: $global-form-label-large;
+			}
+		}
+	}
+  &__required {
+		padding-right: 5px;
+		&:after {
+			color: $color-form-required;
+    	margin-left: 5px;
+    	content: "*";
+		}
+	}
+	&__input, &__select, &__textarea {
+		padding: 5px 0;
+		border: none;
+		border-bottom: 1px solid $color-form-input-border;
+		border-radius: 0;
+		background-color: none;
+		color: $color-form-input;
+		font-size: 1.1rem;
+		line-height: 1.3rem;
+		box-shadow: 0 0 0 transparent;
+		transition: border 75ms ease;
+
+		&:focus {
+	    outline: 0;
+	    border-bottom: 2px solid $color-form-element-focus;
+		}
+		&.error {
+    	border-bottom: 2px solid $color-form-error;
+
+			&:before {
+    		position: absolute;
+    		left: 0;
+    		width: 30px;
+    		height: 34px;
+    		font-size: 1rem;
+    		color: $color-form-error;
+    		content: "verplicht";
+			}
+		}
+	}
+	&__input, &__select {
+	  height: 34px;
+	}
+	&__input, &__textarea {
+    width: 100%;
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+			width: $global-form-input-medium;
+		}
+		@media only screen and (min-width:$b-large){
+			width: $global-form-input-large;
+		}
+	}
+	&__input {
+		+ .field__suffix {
+			position: absolute;
+			top: 39px;
+			right: 4px;
+			line-height: 20px;
+			color: $color-form-prefix;
+			transition: all $animation-duration-base ease;
+			// TODO: use Juice gridsystem.
+			@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+				top: 5px;
+			}
+			@media only screen and (min-width:$b-large){
+				top: 5px;
+			}
+		}
+		&:focus + .field__suffix {
+			right: 24px;
+			color: $color-orange;
+		}
+	}
+	&__textarea {
+    min-height: 3rem;
+    overflow-y: hidden;
+    resize: none
+	}
+  &__select {
+		width: auto;
+    margin-right: 5px;
+    padding: 5px 10px;
+		appearance: none;
+
+		&:-moz-focusring {
+    	color: transparent;
+    	text-shadow: 0 0 0 #000
+		}
+	}
+	&-checkbox {
+    padding: 0;
+
+    &:not(:checked), &:checked {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+    }
+
+    &:not(:checked) + .form__label,
+    &:checked + .form__label {
+      position: relative;
+      display: inline-block;
+      height: 20px;
+			width: 20px;
+      line-height: 20px;
+      font-size: 0;
+      cursor: pointer;
+      user-select: none;
+
+      &:before, &:after {
+        content: '';
+        left: 0;
+        position: absolute;
+        transition: all .25s;
+        z-index: 1;
+      }
+      &:before {
+        top: 4px;
+        left: -1px;
+        width: 11px;
+        height: 14px;
+        border-top: 3px solid transparent;
+        border-left: 3px solid transparent;
+        border-right: 3px solid $color-form-bg;
+        border-bottom: 3px solid $color-form-bg;
+        transform: rotateZ(40deg);
+        transform-origin: 100% 100%;
+      }
+      &:after {
+        top: 3px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color-form-border;
+        border-radius: 2px;
+        background-color: transparent;
+        z-index: 0;
+      }
+    }
+    &:hover + .form__label {
+      &:before {
+        border-right-color: $color-form-text-hover;
+        border-bottom-color: $color-form-text-hover;
+      }
+      &:after {
+				border-color: $color-form-element-hover;
+        background-color: $color-form-element-hover;
+      }
+    }
+    &:checked + .form__label {
+			&:before {
+        border-right-color: $color-form-text-checked;
+        border-bottom-color: $color-form-text-checked;
+      }
+      &:after {
+        border-color: $color-form-element-checked;
+        background-color: $color-form-element-checked;
+      }
+    }
+  }
+	&__btn {
+		margin-right: 10px;
+
+		&:first-child {
+			@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+				margin-left: $global-form-label-medium;
+			}
+			@media only screen and (min-width:$b-large){
+				margin-left: $global-form-label-large;
+			}
+		}
+	}
+	.fieldset-wrapper {
+		margin: 20px 0;
+		padding: 0 10px 10px;
+		border: 1px solid $color-form-input-border;
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+			margin-left: $global-form-label-medium;
+		}
+		@media only screen and (min-width:$b-large){
+			margin-left: $global-form-label-large;
+		}
+
+		.description {
+			margin-left: 30px;
+		}
+	}
+}

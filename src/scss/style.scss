@@ -14,11 +14,20 @@
 /* Theme */
 @import "theme/theme-cangeroes";
 
+/* Settings */
+@import "settings/breakpoints";
+@import "settings/fonts";
+@import "settings/global";
+@import "settings/colors";
+
+
 /* Base */
 //@import "base/normalize";
 @import "base/base";
+@import "base/headings";
 @import "base/grid";
-@import "base/form";
+//@import "base/form";
+@import "base/shame";
 
 /* Layout */
 @import "layout/header";
@@ -34,10 +43,21 @@
 @import "layout/maintenance";
 
 /* Modules */
-//@import "modules/alerts";
+@import "modules/alerts2";
+@import "modules/agenda2";
 @import "modules/tabs";
-@import "modules/buttons";
+//@import "modules/buttons";
+@import "modules/buttons2";
+@import "modules/edit2";
+@import "modules/forms2";
+@import "modules/links2";
+@import "modules/messages2";
+@import "modules/news2";
 @import "modules/tables";
+@import "modules/pager2";
+@import "modules/player2";
+@import "modules/recaptcha2";
+@import "modules/webform.progressbar2";
 //@import "modules/animations";
 
 /* State */

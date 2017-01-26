@@ -14,12 +14,11 @@
 #}
 {%
   set classes = [
-    'col-sm-4',
-    'control-label',
+    'form__control form__label',
     title_display == 'after' ? 'option',
     title_display == 'invisible' ? 'visually-hidden',
     required ? 'js-form-required',
-    required ? 'form-required',
+    required ? 'form__required',
   ]
 %}
 {% if title is not empty or required -%}

@@ -108,7 +108,8 @@
     top: 4px;
     left: 10px;
     overflow: visible;
-    z-index: 5000;
+    z-index: 400; // TODO: Use variable in settings/global.
+
     .site-name {
       > a {
         display: block;
@@ -208,7 +209,7 @@
       top: 38px;
       left: $grid-sm-gutter-width;
       overflow: visible;
-      z-index: 5000;
+      z-index: 400; // TODO: Use variable in settings/global.
 
       .site-name {
         > a {

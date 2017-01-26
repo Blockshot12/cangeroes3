@@ -1,0 +1,63 @@
+$color-pager-link: $color-grey;
+$color-pager-bg: $color-dark-white;
+$color-pager-hover: $color-white;
+$color-pager-active: $color-orange;
+$color-pager-bg-hover: $color-orange;
+
+.pager {
+	//width: auto;
+	min-width: $b-small;
+	margin: 30px auto 0;
+	text-align: center;
+}
+.pager__items {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+	font-weight: 500;
+}
+
+.pager__item {
+	display: inline-block;
+
+	&--first,
+	&--last {
+		display: none;
+	}
+}
+.pager__link {
+	display: block;
+	min-width: 32px;
+	height: 32px;
+	padding: 6px 6px;
+	border-radius: 0;
+	background-color: $color-pager-bg;
+	color: $color-pager-link;
+	transition: all .25s ease; // TODO: Use global animation variable;
+
+	.pager__item--next & {
+		&:after {
+			margin-left: 1px;
+			font: normal normal normal 12px/1 FontAwesome;
+			content: "\f061";
+		}
+	}
+	.pager__item--previous & {
+		&::before {
+			margin-right: 1px;
+			font: normal normal normal 12px/1 FontAwesome;
+			content: "\f060";
+		}
+	}
+
+	.is-active & {
+		color: $color-pager-active;
+	}
+	&:hover {
+		color: $color-pager-hover;
+		background-color: $color-pager-bg-hover;
+	}
+	&:focus {
+		color: $color-pager-link;
+	}
+}

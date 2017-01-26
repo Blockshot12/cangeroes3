@@ -13,7 +13,7 @@
 
   $('.menu-item--active-trail.megamenu').removeClass('open');
 
-  $('.menu-item--expanded > a').click(function(e) {
+  $('.menu > .menu-item--expanded > a').click(function(e) {
     if (!$(this).parent('.menu-item').hasClass('open')) {
 
       $('.open > .menu').slideToggle(300, function() {

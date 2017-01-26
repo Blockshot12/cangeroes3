@@ -1,0 +1,24 @@
+$color-black: #111;
+//$light-black: #191919;
+//$dark-grey: #333;
+//$grey: #666;
+//$light-grey: #ccc;
+//$dark-white: #eee;
+$color-white: #fff;
+//$white-80: rgba(255,255,255,.8);
+//$light-orange: #ff7e35;
+$color-orange: #ec671b;
+//$dark-orange: #c75818;
+
+
+$color-brand: $color-orange;
+
+$color-page-bg: $color-white;
+
+
+$color-alert-bg: $color-orange !default;
+$color-alert-text: $color-white !default;
+
+$color-alert-test: $color-black !default;
+
+$color-pager-bg: #fff !default;

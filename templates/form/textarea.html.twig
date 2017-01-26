@@ -15,11 +15,12 @@
 #}
 {%
   set classes = [
-    'form-control',
+    'form__control',
+    'form__textarea',
     resizable ? 'resize-' ~ resizable,
     required ? 'required',
   ]
 %}
-<div{{ wrapper_attributes.addClass('col-sm-8') }}>
+<div{{ wrapper_attributes }}>
   <textarea{{ attributes.addClass(classes) }}>{{ value }}</textarea>
 </div>

@@ -31,7 +31,7 @@
 <fieldset{{ attributes.addClass(classes) }}>
   {%
     set legend_span_classes = [
-      'fieldset-legend',
+      'fieldset__legend',
       required ? 'js-form-required',
       required ? 'form-required',
     ]
@@ -47,11 +47,11 @@
       </div>
     {% endif %}
     {% if prefix %}
-      <span class="field-prefix">{{ prefix }}</span>
+      <div class="field__prefix">{{ prefix }}</div>
     {% endif %}
     {{ children }}
     {% if suffix %}
-      <span class="field-suffix">{{ suffix }}</span>
+      <div class="field__suffix">{{ suffix }}</div>
     {% endif %}
     {% if description.content %}
       <div{{ description.attributes.addClass('description') }}>{{ description.content }}</div>

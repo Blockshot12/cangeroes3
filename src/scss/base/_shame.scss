@@ -1,0 +1,5 @@
+// A fix for the news view, but it might be a bug for block views in the right column.
+// TODO: Restyle Home and News place this class in page layout.
+.view-content {
+	background-color: $color-white;
+}

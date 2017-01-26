@@ -88,11 +88,21 @@
     {% if page.title_bar %}
       <header class="titlebar container">
         <section class="row">
-          <div class="col-sm-7 col-md-8">
+          <div class="col-sm-12">
             {{ page.title_bar }}
           </div>
         </section>
       </header>
+    {% endif %}
+
+    {% if page.alert %}
+      <section class="container">
+        <div class="row">
+          <div class="col-sm-12 alert alert--orange">
+            {{ page.alert }}
+          </div>
+        </div>
+      </section>
     {% endif %}
 
     <div class="container">

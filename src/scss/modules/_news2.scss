@@ -1,0 +1,73 @@
+// TODO: Add news colors to settings/colors.
+$color-news-link: $color-black;
+$color-news-readmore: $color-white;
+$color-news-hover: $color-orange;
+$color-news-hover-bg: $color-black;
+
+.news-article, .news {
+	position: relative;
+}
+
+.news__photo {
+	position: relative;
+	padding: 0;
+}
+.news__link {
+	color: $color-news-link;
+
+	&:hover {
+		color: $color-news-hover;
+
+		.news__hover {
+			opacity: 1;
+		}
+	}
+}
+.news__hover {
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: rgba($color-news-hover-bg,.7);
+	@include transition(opacity, .25s, ease);
+}
+.news__readmore {
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	color: $white;
+	font-size: 1.3em;
+	text-align: center;
+	margin-top: -26px;
+}
+.news__icon {
+	width: 60px;
+	height: 30px;
+	background-image: url("../img/cangeroes-readmore.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 60px 30px;
+	margin: 0 auto;
+}
+.news__text {
+	position: relative;
+	padding: 0 0 0 $grid-xs-gutter-width;
+}
+.news__title {
+	color: $black;
+	font-size: 1.4em; // TODO: Depreciate and use base H1, H2, etc.
+	padding: 0 0 rem-calc(20px);
+	margin: 0;
+
+	// TODO: Depreciate and use Juice media queries.
+	@media (min-width:$screen-sm-min) {
+		font-size: 1.5em; // TODO: Depreciate and use base H1, H2, etc.
+		padding: 0 0 rem-calc(30px);
+	}
+	@media (min-width:$screen-md-min) {
+		font-size: 1.6em; // TODO: Depreciate and use base H1, H2, etc.
+	}
+}
