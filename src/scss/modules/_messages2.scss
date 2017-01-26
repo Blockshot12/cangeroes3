@@ -1,0 +1,87 @@
+$color-messages-bg: $color-light-grey;
+$color-messages-border: $color-black;
+
+$color-messages-status: #090;
+$color-messages-error: $color-red;
+$color-messages-warning: $color-orange;
+
+.messages {
+	&__content {
+		padding: 15px;
+		border-left: 4px solid $color-messages-border;
+		background-color: $color-messages-bg;
+		color: $color-text-base;
+	}
+	&__icon, &__text {
+		display: block;
+		width: auto;
+		color: $color-text-base;
+		font-size: 1.2rem;
+
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			font-size: 1.3rem;
+		}
+		@media only screen and (min-width:$b-large) {
+			font-size: 1.4rem;
+		}
+	}
+	&__icon {
+		position: absolute;
+		padding-right: 10px;
+	}
+	&__text {
+		margin-left: 40px;
+
+		a {
+		  color: $color-text-base;
+			pointer-events: none;
+
+			&:focus, &.focus,
+			&:hover, &.hover {
+				color: $color-text-base;
+			}
+		}
+	}
+	&__fa {
+		font-size: 1.6rem;
+		transform: translateY(-2px);
+
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			font-size: 1.8rem;
+		}
+		@media only screen and (min-width:$b-large) {
+			font-size: 2rem;
+		}
+	}
+	&__fa:before {
+		.messages--status & {
+			content: "\f00c";
+			color: $color-messages-status;
+		}
+		.messages--error & {
+			content: "\f00d";
+			color: $color-messages-error;
+		}
+		.messages--warning & {
+			content: "\f071";
+			color: $color-messages-warning;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding-left: 0;
+		list-style-type: none;
+		font-size: 1rem;
+
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			font-size: 1.1rem;
+		}
+		@media only screen and (min-width:$b-large) {
+			font-size: 1.2rem;
+		}
+	}
+}
