@@ -1,0 +1,14 @@
+.g-recaptcha {
+	display: table;
+	width: 100%;
+	margin: $global-gutter-xs 0 20px;
+	// TODO: use Juice gridsystem.
+	@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+		width: $global-form-input-medium;
+		float: right;
+	}
+	@media only screen and (min-width:$b-large){
+		width: $global-form-input-large;
+		margin: $global-gutter-sm 0 30px $global-form-label-large;
+	}
+}
