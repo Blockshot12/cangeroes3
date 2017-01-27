@@ -41,6 +41,14 @@ $animation-duration-base: .25s;
 	@media only screen and (min-width:$b-medium){
 		padding: 0 $global-gutter-sm 25px;
 	}
+	&__messages {
+		padding: 0 $global-gutter-xs;
+		background-color: $color-form-bg;
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-medium) {
+			padding: 0 $global-gutter-sm;
+		}
+	}
 	&__legend {
     margin: 20px 0 10px;
     font-size: 1.3rem;
