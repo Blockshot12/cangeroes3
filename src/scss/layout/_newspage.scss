@@ -46,23 +46,24 @@
 					}
 				}
 				>.news-text {
-					position: absolute;
+					position: static;
 					left: 0;
 					bottom: 0;
-					padding: $grid-xs-gutter-width $grid-xs-gutter-width $grid-xs-gutter-width*2;
+					padding: 0;
+					border-bottom: 5px solid $color-black;
 
 					.news-title {
 						display: block;
-						color: $black;
+						color: $color-black;
 						font-size: 2.4em;
 						font-weight: 400;
-						background-color: $white;
-						padding: 10px 10px 20px;
-						margin-bottom: $grid-xs-gutter-width*3;
+						background-color: $color-white;
+						padding: 10px 10px 30px;
+						margin-bottom: 0;
 
 						&:before {
 							background: $orange none repeat scroll 0 0;
-							bottom: 10px;
+							bottom: 20px;
 							content: "";
 							height: 2px;
 							position: absolute;
@@ -72,11 +73,16 @@
 					.news-btn {
 						display: none;
 					}
+
+					// TODO: use Juice gridsystem.
+					@media only screen and (min-width:$b-medium) {
+						position: absolute;
+					}
 				}
 
 				&:hover {
 					>.news-photo >.news-hover {
-						opacity: 1;
+						opacity: 0;
 					}
 					>.news-text >.news-btn {
 						color: $white;
@@ -87,6 +93,7 @@
 						}
 					}
 				}
+
 			}
 		}
 	}
@@ -180,10 +187,12 @@
 				>a {
 					>.news-text {
 						padding: $grid-sm-gutter-width;
+						border-bottom: none;
 
 						.news-title {
 							font-size: 1.8em;
 							margin-bottom: $grid-sm-gutter-width;
+							box-shadow: 0 0 15px rgba($color-black,.15);
 
 							&:before {
 								width: $title-sm-underscore;
@@ -277,7 +286,7 @@
 
 				>a {
 					>.news-text {
-						padding: $grid-sm-gutter-width $grid-sm-gutter-width $grid-sm-gutter-width*3;
+						padding: $grid-sm-gutter-width $grid-sm-gutter-width $grid-sm-gutter-width;
 
 						.news-title {
 							font-size: 2.6em;

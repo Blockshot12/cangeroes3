@@ -1,0 +1,51 @@
+$color-cookie-border: $color-white;
+$color-cookie-bg: $color-white;
+$color-cookie-text: $color-black;
+$color-cookie-link: $color-orange;
+
+$color-cookie-btn-bg: $color-black;
+$color-cookie-btn-hover: $color-orange;
+$color-cookie-btn-text: $color-white;
+
+.cc_banner-wrapper {
+  height: 66px;
+  background-color: $color-cookie-bg;
+  z-index: 499;
+}
+.cc_container {
+  position: relative;
+  padding: 16px 30px;
+  background-color: transparent;
+  font-family: $font-family-base;
+
+  .cc_more_info {
+    color: $color-cookie-link;
+
+    &:visited {
+      color: $color-cookie-link;
+    }
+    &:hover {
+      color: $color-cookie-link;
+      text-decoration: underline;
+    }
+  }
+  .cc_btn {
+    border-radius: 0;
+    background-color: $color-cookie-btn-bg;
+    color: $color-cookie-btn-text;
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      background-color: $color-cookie-btn-hover;
+      color: $color-cookie-btn-bg;
+    }
+  }
+}
+.cc_message {
+  color: $color-cookie-text;
+  font-weight: $font-weight-normal;
+}
+
+.cc_logo {
+  display: none;
+}

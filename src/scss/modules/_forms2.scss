@@ -42,11 +42,11 @@ $animation-duration-base: .25s;
 		padding: 0 $global-gutter-sm 25px;
 	}
 	&__messages {
-		padding: 0 $global-gutter-xs;
+		padding: 0 $global-gutter-xs $global-gutter-xs;
 		background-color: $color-form-bg;
 		// TODO: use Juice gridsystem.
 		@media only screen and (min-width:$b-medium) {
-			padding: 0 $global-gutter-sm;
+			padding: 0 $global-gutter-sm $global-gutter-sm;
 		}
 	}
 	&__legend {
@@ -60,10 +60,10 @@ $animation-duration-base: .25s;
 		}
 	}
 	&__element, &-wrapper {
-		margin-bottom: 10px;
+		margin-bottom: 5px;
 		// TODO: use Juice gridsystem.
 		@media only screen and (min-width:$b-large) {
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 		}
 	}
   &__element {
@@ -120,6 +120,7 @@ $animation-duration-base: .25s;
 	}
 	&__input, &__select, &__textarea {
 		padding: 5px 0;
+		margin-bottom: 5px;
 		border: none;
 		border-bottom: 1px solid $color-form-input-border;
 		border-radius: 0;
@@ -129,6 +130,11 @@ $animation-duration-base: .25s;
 		line-height: 1.3rem;
 		box-shadow: 0 0 0 transparent;
 		transition: border 75ms ease;
+
+		// TODO: use Juice gridsystem.
+		@media only screen and (min-width:$b-large) {
+			margin-bottom: 10px;
+		}
 
 		&:focus {
 	    outline: 0;
@@ -294,6 +300,14 @@ $animation-duration-base: .25s;
 
 		.description {
 			margin-left: 30px;
+		}
+	}
+	.description {
+		@media only screen and (min-width:$b-small) and (max-width:$b-medium - 1px) {
+			margin-left: $global-form-label-medium;
+		}
+		@media only screen and (min-width:$b-large){
+			margin-left: $global-form-label-large;
 		}
 	}
 }
